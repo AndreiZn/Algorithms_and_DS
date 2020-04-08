@@ -3,18 +3,36 @@ import sys
 
 class StackWithMax():
     def __init__(self):
-        self.__stack = []
+        self.stack = [None]*400000
+        self.p = 0
+        self.aux_stack = [None]*400000
+        self.aux_p = 0
 
     def Push(self, a):
-        self.__stack.append(a)
+        self.stack[self.p] = a
+        self.p += 1
+        if self.aux_p == 0:
+            self.aux_stack[self.aux_p] = a
+            self.aux_p += 1
+        elif a>= self.aux_stack[self.aux_p-1]:
+            self.aux_stack[self.aux_p] = a
+            self.aux_p += 1
 
     def Pop(self):
-        assert(len(self.__stack))
-        self.__stack.pop()
+        if self.p > 0:
+            el = self.stack[self.p-1]
+            self.p -= 1
+            top_aux = self.aux_stack[self.aux_p-1]
+            if el == top_aux:
+                self.aux_p -= 1
+        else:
+            assert(0)
 
     def Max(self):
-        assert(len(self.__stack))
-        return max(self.__stack)
+        if self.p > 0:
+            return self.aux_stack[self.aux_p-1]
+        else:
+            assert(0)
 
 
 if __name__ == '__main__':

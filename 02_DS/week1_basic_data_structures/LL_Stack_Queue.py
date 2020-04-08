@@ -148,6 +148,25 @@ class DoublyLinkedList:
         else:
             print('Empty DLL')
 
+class Queue:
+    def __init__(self):
+        self.queue = DoublyLinkedList()
+
+    def Enqueueu(self, key):
+        self.queue.PushBack(key)
+
+    def Dequeue(self):
+        top_front = self.queue.TopFront()
+        self.queue.PopFront()
+        return top_front
+
+    def GetLast(self):
+        return self.queue.TopBack()
+
+    def Empty(self):
+        return self.queue.Empty()
+
+
 a = DoublyLinkedList()
 a.PushFront(2)
 a.PushFront(4)
