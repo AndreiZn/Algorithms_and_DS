@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/week2_priority_queues_and_disjoint_sets/2_job_queue/0_eSports_Cognitive_tests/0_eSports_CTests_exp_and_analysis" vcs="Git" />
   </component>
 </project>

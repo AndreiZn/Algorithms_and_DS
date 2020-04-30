@@ -66,7 +66,7 @@ def fibonacci_sum_squares_naive(n):
     return sum % 10
 
 # represent the sum of squares of fibonacci numbers as an area of a rectangle with
-# horizontal side = F_n + F_n-1; vertical side = F_n-1 + F_n-2 
+# horizontal side = F_n + F_{n-1}; vertical side = F_{n-1} + F_{n-2} 
 def fibonacci_sum_squares(n):
     h = get_fhuge(n+1,10)
     v = get_fhuge(n,10)
